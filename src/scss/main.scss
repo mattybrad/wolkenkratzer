@@ -1,0 +1,77 @@
+body {
+  background: #000000;
+  color: #ffffff;
+  font-family: 'IM Fell DW Pica', serif;
+  font-size: 20px;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+
+}
+
+.foreground {
+  z-index: 2;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  text-align: center;
+}
+
+.foregroundInner {
+  display: inline-block;
+  padding: 10px;
+  width: 700px;
+  text-align: justify;
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
+}
+
+
+
+h1 {
+  text-align: center;
+}
+
+.topMenu {
+  text-align: center;
+}
+
+.bgCanvas {
+  z-index: 1;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 120%;
+}
+
+.projectPreview {
+  background: rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 0.5em;
+}
+
+.projectPreview h4 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.tagList {
+  font-variant: small-caps;
+}
