@@ -1,3 +1,4 @@
+import React from 'react';
 import { createStore, applyMiddleware } from 'redux';
 import {persistStore, autoRehydrate} from 'redux-persist'
 import { Provider } from 'react-redux';
@@ -9,7 +10,7 @@ import { Router, Route, Link, browserHistory } from 'react-router';
 import Main from './components/Main';
 import * as Pages from './pages';
 
-import './scss/main.scss';
+//import './scss/main.scss';
 
 const loggerMiddleware = createLogger();
 const store = createStore(
@@ -21,6 +22,8 @@ const store = createStore(
   autoRehydrate()
 );
 persistStore(store);
+
+console.log("OK?");
 
 render(
   <Provider store={store}>
