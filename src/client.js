@@ -10,7 +10,7 @@ import { Router, Route, Link, browserHistory } from 'react-router';
 import Main from './components/Main';
 import * as Pages from './pages';
 
-//import './scss/main.scss';
+import './scss/main.scss';
 
 const loggerMiddleware = createLogger();
 const store = createStore(
