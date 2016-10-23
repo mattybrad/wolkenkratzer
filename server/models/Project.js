@@ -4,7 +4,8 @@ var Schema = mongoose.Schema;
 var ProjectSchema = new Schema({
   title: String,
   description: String,
-  tags: [String]
+  tags: [String],
+  path: String
 })
 
 var Project = mongoose.model('Project', ProjectSchema);

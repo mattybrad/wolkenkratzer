@@ -27,6 +27,15 @@ export default function Projects(
     case Actions.FAILURE_FETCH_PROJECT:
     return Object.assign({}, state, {isFetching: false});
 
+    case Actions.REQUEST_POST_PROJECT:
+    return Object.assign({}, state, {isFetching: true});
+
+    case Actions.SUCCESS_POST_PROJECT:
+    return Object.assign({}, state, {isFetching: false});
+
+    case Actions.FAILURE_POST_PROJECT:
+    return Object.assign({}, state, {isFetching: false});
+
     default:
     return state
   }

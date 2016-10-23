@@ -30,6 +30,8 @@ render(
     <Router history={browserHistory}>
       <Route path="" component={Main}>
         <Route path="/" component={Pages.Home} />
+        <Route path="createproject" component={Pages.ProjectForm} />
+        <Route path="editproject/:project" component={Pages.ProjectForm} />
         <Route path="projects" component={Pages.Projects} />
         <Route path="projects/:project" component={Pages.Project} />
         <Route path="about" component={Pages.About} />

@@ -47,6 +47,32 @@ export function failureFetchProject(message) {
   }
 }
 
+export const REQUEST_POST_PROJECT = 'REQUEST_POST_PROJECT';
+export function requestPostProject(title, path, description, tags) {
+  return {
+    type: REQUEST_POST_PROJECT,
+    title,
+    path,
+    description,
+    tags
+  }
+}
+
+export const SUCCESS_POST_PROJECT = 'SUCCESS_POST_PROJECT';
+export function successPostProject() {
+  return {
+    type: SUCCESS_POST_PROJECT
+  }
+}
+
+export const FAILURE_POST_PROJECT = 'FAILURE_POST_PROJECT';
+export function failurePostProject(message) {
+  return {
+    type: FAILURE_POST_PROJECT,
+    message
+  }
+}
+
 export function fetchProjects() {
   return function(dispatch) {
     dispatch(requestFetchProjects());
@@ -71,6 +97,25 @@ export function fetchProject(projectName) {
       })
       .catch(function(err) {
         dispatch(failureFetchProject(err.message));
+      })
+  }
+}
+
+export function postProject(title, path, description, tags) {
+  return function(dispatch) {
+    dispatch(requestPostProject(title, path, description, tags));
+    projects
+      .post({
+        title,
+        path,
+        description,
+        tags
+      })
+      .then(function(json) {
+        dispatch(successPostProject(json));
+      })
+      .catch(function(err) {
+        dispatch(failurePostProject(err.message));
       })
   }
 }

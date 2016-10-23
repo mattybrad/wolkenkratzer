@@ -17,9 +17,8 @@ router.get('/:projectName', function(req, res){
 })
 
 router.post('/', function(req, res){
-  Project.create({
-    title: "Testing"
-  }, function(err, result) {
+  console.log(req.body);
+  Project.create(req.body, function(err, result) {
     if(err) return res.status(400).send(err);
     res.send(result);
   });
